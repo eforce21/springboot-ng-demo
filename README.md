@@ -1,10 +1,10 @@
-####Introduction 
+#### Introduction 
 
 This project provides an example use of the technology stack that eForce21 uses to implement web projects.
 The following sections describe the needed tooling and the steps that are needed to install and run the different parts 
 of the application.
 
-####Setup of the development environment
+#### Setup of the development environment
 
 1. Java/JDK: The minimum required Java version needed to run the backend application is Java 8. Please refer to the
 [Oracle download site](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) to download the
@@ -60,7 +60,7 @@ Angular:
 
 If you see an error please check if you have installed the Angular CLI using the ```-g``` flag.
 
-####IDE recommendations
+#### IDE recommendations
 
 We would recommend that you use Microsoft's free editor Visual Studio Code for development. Visual Studio supports both 
 Java and Angular. If you are already comfortable with Eclipse or run into any issues with Java in Visual Studio Code 
@@ -70,7 +70,7 @@ as the support for Angular is not optimal in Eclipse.
 **Note:** Refer to [this](https://code.visualstudio.com/docs/languages/java) page if you need any assistance with enabling
 Java in Visual Studio Code.
 
-####Application build and execution
+#### Application build and execution
 
 After cloning the project you need to download all needed dependencies and thus preparing the application for execution.
 
