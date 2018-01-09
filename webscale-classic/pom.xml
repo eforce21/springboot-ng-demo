@@ -19,7 +19,7 @@
             <artifactId>webscale-ui</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.eforce21.lib.security</groupId>
+            <groupId>com.eforce21.webscale</groupId>
             <artifactId>security-tokenconfig</artifactId>
         </dependency>
 

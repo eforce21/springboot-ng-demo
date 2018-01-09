@@ -10,6 +10,7 @@
     <name>Webscale :: Parent</name>
 
     <modules>
+        <module>security-tokenconfig</module>
         <module>webscale-classic</module>
         <module>webscale-ui</module>
     </modules>
@@ -40,7 +41,7 @@
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>com.eforce21.lib.security</groupId>
+                <groupId>com.eforce21.webscale</groupId>
                 <artifactId>security-tokenconfig</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
