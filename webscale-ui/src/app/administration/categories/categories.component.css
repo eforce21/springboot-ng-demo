@@ -1,0 +1,8 @@
+.wu-add-category > input {
+    width: 500px;
+    margin-right: 20px;
+}
+
+.wu-add-category > input::placeholder {
+    color: #7e7e7e;
+}

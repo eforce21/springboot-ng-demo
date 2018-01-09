@@ -1,0 +1,23 @@
+<div class="image-thumbnail-container">
+    <div (click)="imagePreview()">
+        <img *ngIf="image" [src]="image" />
+    </div>
+    <div class="wu-image-category">
+        <mat-chip-list>
+            <mat-chip *ngFor="let cat of imageCategories">{{cat}}</mat-chip>
+        </mat-chip-list>
+        <a (click)="toggleCategoryInput()" class="waves-effect waves-light btn">{{'images.addCategory' | translate}}</a>
+        <div *ngIf="showCategoryInput">
+            <mat-form-field>
+                <mat-select placeholder="Select category" [(value)]="selectedCategory">
+                    <mat-option *ngFor="let category of categories" [value]="category">
+                        {{ category.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <a (click)="saveCategory()" class="waves-effect waves-light btn">{{'images.saveCategory' | translate}}</a>
+            <div class="wu-arrow-down"></div>
+        </div>
+    </div>
+</div>
+<wu-image-preview [imageId]="imageId" [showPreview]="showPreview" (closePreview)="closeImagePreview()"></wu-image-preview>

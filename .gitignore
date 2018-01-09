@@ -1,0 +1,20 @@
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.iml
+.DS_Store
+
+target
+
+# Local H2 Database
+*.mv.db
+*.trace.db
+
+/db
+/images/preview/*.jpg
+/images/thumb/*.jpg

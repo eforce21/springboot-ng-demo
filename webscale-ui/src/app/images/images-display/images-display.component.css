@@ -1,0 +1,18 @@
+input::placeholder {
+    color: #7e7e7e;
+}
+
+.wu-clearfix > i {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 20px;
+    color: #7e7e7e;
+}
+
+.wu-clearfix > input {
+    width: 811px;
+}
+
+.wu-clearfix > i, .wu-clearfix > input {
+    float: left;
+}

@@ -1,0 +1,15 @@
+<div *ngIf="showLogin" class="wu-modal clearfix">
+    <div class="wu-modal-content">
+        <span>{{'login.title' | translate}}</span>
+        <span class="wu-model-close" (click)="closeLogin()">&times;</span>
+        <div>
+            <input placeholder="{{'login.username' | translate}}" [(ngModel)]="authentication.username"/>
+        </div>
+        <div>
+            <input type="password" placeholder="{{'login.password' | translate}}" [(ngModel)]="authentication.password">
+        </div>
+        <div class="wu-clearfix">
+            <a class="bla waves-effect waves-light btn" (click)="login()">{{'login.button' | translate}}</a>
+        </div>
+    </div>
+</div>

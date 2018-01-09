@@ -1,0 +1,49 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url("fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Open Sans Light";
+    src: url("fonts/OpenSans-Light.ttf");
+}
+
+@font-face {
+    font-family: "Open Sans Semi Bold";
+    src: url("fonts/OpenSans-Semibold.ttf");
+}
+
+@font-face {
+    font-family: "Open Sans Bold";
+    src: url("fonts/OpenSans-Bold.ttf");
+}
+
+body {
+    background-color: #e6e6e6;
+}
+
+.wu-container {
+    width: 75%;
+    margin: auto;
+}
+
+.wu-clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+/* Materialize CSS overrides */
+.btn, .btn-large {
+    background-color: #ffc107;
+}
+
+.btn:hover, .btn-large:hover {
+    background-color: #ffc107;
+}
+
+input:focus {
+    border-bottom: 1px solid #ffc107 !important;
+    box-shadow: 0 1px 0 0 #ffc107 !important;
+}
+
+

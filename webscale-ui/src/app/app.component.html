@@ -1,0 +1,22 @@
+<nav>
+    <div class="nav-wrapper amber">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li *ngIf="!loggedInUser()">
+                <a (click)="toggleLogin()">Login</a>
+            </li>
+            <li *ngIf="loggedInUser()">
+                <a (click)="userLogout()">Logout</a>
+            </li>
+            <li *ngIf="loggedInUser()">
+                <a routerLink="/images">Images</a>
+            </li>
+            <li *ngIf="loggedInUser()">
+                <a routerLink="/administration">Administration</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<wu-login [showLogin]="login" (onCloseLogin)="toggleLogin()"></wu-login>
+<div class="wu-container">
+    <router-outlet></router-outlet>
+</div>

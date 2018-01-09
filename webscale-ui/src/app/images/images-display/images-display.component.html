@@ -1,0 +1,11 @@
+<div class="wu-clearfix">
+    <i class="fa fa-lg fa-search"></i>
+    <input (keyup)="filterImages()" placeholder="{{'images.filterPlaceholder' | translate}}" [(ngModel)]="filter"/>
+</div>
+<div class="wu-image-container section wu-clearfix"
+     infiniteScroll
+     [infiniteScrollDistance]="1"
+     [infiniteScrollUpDistance]="1.5"
+     (scrolled)="loadImagePage()">
+    <wu-image-thumbnail *ngFor="let imageData of imageMetaData" [imageId]="imageData.id"></wu-image-thumbnail>
+</div>

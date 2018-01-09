@@ -1,0 +1,8 @@
+<label class="wu-file-upload">
+    {{'imageUpload.uploadFile' | translate}}
+    <input type="file" (change)="chooseFile($event)"/>
+</label>
+<span *ngIf="images?.length > 0">{{'imageUpload.fileTitle' | translate}}</span>
+<span *ngFor="let image of images"> {{image.name}}</span>
+<a (click)="uploadImage()" *ngIf="images?.length > 0" class="waves-effect waves-light btn">{{'imageUpload.upload' | translate}}</a>
+

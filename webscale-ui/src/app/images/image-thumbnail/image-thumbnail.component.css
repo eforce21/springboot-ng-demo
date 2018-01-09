@@ -1,0 +1,42 @@
+.image-thumbnail-container {
+    position: relative;
+    background-color: #ffffff;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    border-radius: 2px;
+    padding: 10px;
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.image-thumbnail-container > div:first-child:hover {
+    cursor: pointer;
+}
+
+.wu-image-category > div {
+    position: absolute;
+    bottom: 55px;
+    left: 200px;
+    background-color: #e6e6e6;
+    z-index: 9;
+    width: 300px;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    border-radius: 2px;
+    text-align: right;
+    padding: 10px;
+}
+
+.wu-image-category > div > mat-form-field {
+    width: 100%;
+}
+
+.wu-arrow-down {
+    position: absolute;
+    bottom: -8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #e6e6e6;
+}

@@ -1,0 +1,37 @@
+{
+  "general": {
+    "teaser": "Systems built as Reactive Systems are more flexible, loosely-coupled and scalable.",
+    "categoryTitle": "Add categories",
+    "addImages": "Add images"
+  },
+  "messages": {
+    "categoryAddSuccess": "Successfully added category to image",
+    "imageUploadSuccess": "Successfully uploaded image",
+    "imageUploadFailure": "Could not upload file. Please try again later",
+    "imageFileExtensionError": "You are only allowed to upload images (jpg, jpeg, png, gif, bmp, tiff)"
+  },
+  "login": {
+    "title": "Enter login data",
+    "username": "Username",
+    "password": "Password",
+    "button": "Login"
+  },
+  "images": {
+    "filterPlaceholder": "Filter",
+    "addCategory": "Add category",
+    "saveCategory": "Save",
+    "categoryPlaceholder": "Category"
+  },
+  "categories": {
+    "categoryName": "Category name",
+    "addCategoryButton": "Add"
+  },
+  "imageUpload": {
+    "uploadFile": "Choose image",
+    "upload": "Add",
+    "fileTitle": "You have chosen the file"
+  },
+  "preview": {
+    "downloadImage": "Download image"
+  }
+}

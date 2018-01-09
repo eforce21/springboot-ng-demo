@@ -1,0 +1,9 @@
+<div *ngIf="showPreview" class="wu-modal">
+    <div class="wu-modal-content">
+        <span (click)="onClosePreview()" class="wu-model-close">&times;</span>
+        <img [src]="image"/>
+        <div>
+            <a (click)="downloadImage()" class="waves-effect waves-light btn">{{'preview.downloadImage' | translate}}</a>
+        </div>
+    </div>
+</div>
