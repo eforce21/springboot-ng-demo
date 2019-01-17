@@ -66,22 +66,23 @@ public class ImageService {
     }
 
     public Optional<ImageDetailDTO> getImageDetails(Long id) {
-        ImageMetadata one = imageMetadataDao.findOne(id);
-        if(one == null) {
-            return Optional.empty();
+        Optional<ImageMetadata> one = imageMetadataDao.findById(id);
+        if(one.isPresent()) {
+            ImageMetadata imageMetadata = one.get();
+            ImageDetailDTO image = new ImageDetailDTO();
+            image.setId(imageMetadata.getId());
+            image.setName(imageMetadata.getName());
+            image.setPath(imageMetadata.getPath());
+            image.setPreviewPath(imageMetadata.getDetailPath());
+            image.setThumbnailPath(imageMetadata.getThumbnailPath());
+            image.setMimeType(imageMetadata.getMimeType());
+            image.setRecordingDate(imageMetadata.getRecordingDate());
+            image.setCategories(imageMetadata.getCategories().stream().map(Category::getName).collect(Collectors.toSet()));
+
+            return Optional.of(image);
         }
+        return Optional.empty();
 
-        ImageDetailDTO image = new ImageDetailDTO();
-        image.setId(one.getId());
-        image.setName(one.getName());
-        image.setPath(one.getPath());
-        image.setPreviewPath(one.getDetailPath());
-        image.setThumbnailPath(one.getThumbnailPath());
-        image.setMimeType(one.getMimeType());
-        image.setRecordingDate(one.getRecordingDate());
-        image.setCategories(one.getCategories().stream().map(Category::getName).collect(Collectors.toSet()));
-
-        return Optional.of(image);
     }
 
     private ImageMetadataDTO mapMetadata(ImageMetadata image) {
@@ -131,13 +132,13 @@ public class ImageService {
     }
 
     public ImageDetailDTO addCategoryToImage(Long imageId, Long categoryId) {
-        ImageMetadata image = imageMetadataDao.findOne(imageId);
-        Category category = categoryDao.findOne(categoryId);
-        if(image == null || category == null) {
+        Optional<ImageMetadata> image = imageMetadataDao.findById(imageId);
+        Optional<Category> category = categoryDao.findById(categoryId);
+        if(!image.isPresent() || !category.isPresent()) {
             throw new NotFoundException();
         }
 
-        image.getCategories().add(category);
+        image.get().getCategories().add(category.get());
 
         return getImageDetails(imageId).orElse(null);
     }

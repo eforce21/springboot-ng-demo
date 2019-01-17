@@ -14,6 +14,6 @@ public class WebSecurityConfig extends DefaultTokenBasedConfig {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("admin").password("password").roles("ADMIN");
+        auth.inMemoryAuthentication().withUser("admin").password("{noop}password").roles("ADMIN");
     }
 }
