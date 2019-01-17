@@ -31,6 +31,10 @@
     width: 100%;
 }
 
+.wu-image-category {
+    padding-top: 8px;
+}
+
 .wu-arrow-down {
     position: absolute;
     bottom: -8px;
@@ -40,3 +44,4 @@
     border-right: 8px solid transparent;
     border-top: 8px solid #e6e6e6;
 }
+

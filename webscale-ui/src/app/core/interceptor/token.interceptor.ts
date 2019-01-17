@@ -1,3 +1,5 @@
+
+import {tap} from 'rxjs/operators';
 import {
     HttpEvent,
     HttpHandler,
@@ -9,8 +11,8 @@ import {
     HttpSentEvent,
     HttpUserEvent,
 } from "@angular/common/http";
-import {Observable} from "rxjs/Observable";
-import 'rxjs/add/operator/do';
+import {Observable} from "rxjs";
+
 import {environment} from "../../../environments/environment";
 
 export class TokenInterceptor implements HttpInterceptor {
@@ -27,13 +29,13 @@ export class TokenInterceptor implements HttpInterceptor {
             });
         }
 
-        return next.handle(requestCopy).do((event: HttpEvent<any>) => {
+        return next.handle(requestCopy).pipe(tap((event: HttpEvent<any>) => {
             if (event instanceof HttpResponse) {
                 let authToken = event.headers.get(environment.authTokenKey);
                 if (null != authToken) {
                     localStorage.setItem(environment.authTokenKey, authToken);
                 }
             }
-        });
+        }));
     }
 }

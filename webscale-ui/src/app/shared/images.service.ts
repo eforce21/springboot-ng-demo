@@ -1,6 +1,8 @@
+
+import {map} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
 import {ImageGetParams} from "../images/model/image-get-params";
-import {Observable} from "rxjs/Observable";
+import {Observable} from "rxjs";
 import {ImageMetadataTo} from "../images/model/image-metadata.to";
 import {CategoryTo} from "./model/category.to";
 import {ImageDetailTo} from "../images/model/image-detail.to";
@@ -44,8 +46,8 @@ export class ImagesService {
     }
 
     public downloadImage(imageId: number): Observable<DownloadResponseWrapper> {
-        return this.httpClient.get(this.IMAGE_URL + '/' + imageId + '/data', {responseType: 'blob'})
-            .map(response => {
+        return this.httpClient.get(this.IMAGE_URL + '/' + imageId + '/data', {responseType: 'blob'}).pipe(
+            map(response => {
                 let blob: Blob = new Blob([response], {type: 'application/octet-stream'});
                 // let contentDisposition: string = response.headers.get('Content-Disposition');
                 // let fileName: string = contentDisposition.split('=')[1];
@@ -53,7 +55,7 @@ export class ImagesService {
                 responseWrapper.data = blob;
                 responseWrapper.fileName = 'download' + this.CONTENT_TYPE_FILE_TYPE[response.type];
                 return responseWrapper;
-            });
+            }));
     }
 
     private imageData(imageId: number, dataUrl: string): Observable<Blob> {

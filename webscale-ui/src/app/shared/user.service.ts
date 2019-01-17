@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {NavigationService} from "./navigation.service";
 import {environment} from "../../environments/environment";
-import {Observable} from "rxjs/Observable";
+import {Observable} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {HttpData} from "./http-data.interface";
 
